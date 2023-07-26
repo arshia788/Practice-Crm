@@ -40,4 +40,4 @@ const customerSchema= new Schema({
 })
 
 const Customer1 = models.Customer1 || model("Customer1", customerSchema);
-export default Customer1
+export default Customer1;
