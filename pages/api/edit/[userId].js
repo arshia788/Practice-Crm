@@ -1,11 +1,12 @@
 import Customer1 from "../../../models/Customer1";
+import connectDB from '../../../utils/connectDB'
 
 export default async function handler(req, res){
     try{
         await connectDB()
     }catch(err){
         console.log(err);
-        res.status(500).json({status:"success", message:"failed to connect to DB"})
+        res.status(500).json({status:"failed", message:"failed to connect to DB"})
         return;
     }
 
@@ -30,6 +31,19 @@ export default async function handler(req, res){
         }catch(err){
             res.status(400).json({status:"success", message:"failed to recieve the user to DB"})
 
+        }
+    }
+    else if(req.method === "GET"){
+        const {userId}= req.query
+
+        try{
+            const customer= await Customer1.findOne({_id:userId})
+            res.status(200).json({status:'success', data:customer})
+
+        }catch(err){
+            console.log(err);
+            res.status(500).json({status:"failed", message:"failed to retrieve the specific  to DB"})
+            return;
         }
     }
 }

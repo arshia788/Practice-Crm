@@ -1,5 +1,5 @@
 import coonectDB from "../../../utils/connectDB";
-import Customer1 from "../../../models/Customer";
+import Customer1 from "../../../models/Customer1";
 
 export default async function handler(req,res){
     try{
@@ -22,7 +22,6 @@ export default async function handler(req,res){
             res.status(200).json({status:"success", message:"data created", data:customer1})
         }catch(err){
             res.status(500).json({status:'failed', message:'failed to send data to DB'})
-
         }
     }
 

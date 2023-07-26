@@ -1,11 +1,13 @@
 import connectDB from '../utils/connectDB';
 import Customer1 from '../models/Customer1';
+import HomePage from '../components/templates/HomePage';
 
 export default function index({data}) {
-  console.log(data);
-  
+
   return (
-    <div >index</div>
+    <div>
+      <HomePage data={data}/>
+    </div>
   )
 }
 
@@ -20,7 +22,7 @@ export async function getServerSideProps() {
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json({ status: "success", message: "failed to connect to DB" })
+    res.status(500).json({ status: "failed", message: "failed to connect to DB" })
     return;
   }
 

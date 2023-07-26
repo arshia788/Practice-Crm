@@ -24,6 +24,10 @@ export default function AddCustomerPage() {
       headers:{"Content-Type":"application/json"}
     })
     const data= await res.json()
+
+    if(data.status === 'success'){
+      router.push('/')
+    }
     console.log(data);
   }
 
@@ -58,9 +62,8 @@ export default function AddCustomerPage() {
         onClick={saveHandler}
           className='bg-green-500 rounded text-white px-2 py-1'
         >save</button>
-
-
       </div>
+      
     </div>
   )
 }
