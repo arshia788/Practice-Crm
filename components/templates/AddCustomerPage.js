@@ -12,6 +12,7 @@ export default function AddCustomerPage() {
     address: '',
     postalCode: '',
     date: '',
+    products:[],
   })
 
   const router= useRouter();

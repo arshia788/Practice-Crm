@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormInput from './FormInput'
+import ItemList from './ItemList'
 
 export default function Form({ form, setForm }) {
 
@@ -11,32 +12,34 @@ export default function Form({ form, setForm }) {
     return (
         <div>
             <FormInput name="name" lable="Name" type="text"
-                onChange={changeHandler} value={form.name}
+                changeHandler={changeHandler} value={form.name}
             />
 
             <FormInput name="lastName" lable="Last-Name" type="text"
-                onChange={changeHandler} value={form.lastName}
+                changeHandler={changeHandler} value={form.lastName}
             />
 
             <FormInput name="email" lable="Email" type="text"
-                onChange={changeHandler} value={form.email}
+                changeHandler={changeHandler} value={form.email}
             />
 
             <FormInput name="address" lable="Address" type="text"
-                onChange={changeHandler} value={form.address}
+                changeHandler={changeHandler} value={form.address}
             />
 
             <FormInput name="phone" lable="Phone" type="text"
-                onChange={changeHandler} value={form.phone}
+                changeHandler={changeHandler} value={form.phone}
             />
 
             <FormInput name="postalCode" lable="Postal-Code" type="text"
-                onChange={changeHandler} value={form.postalCode}
+                changeHandler={changeHandler} value={form.postalCode}
             />
 
             <FormInput name="date" lable="Date" type="date"
-                onChange={changeHandler} value={form.date}
+                changeHandler={changeHandler} value={form.date}
             />
+
+            <ItemList form={form} setForm={setForm} />
 
         </div>
     )
