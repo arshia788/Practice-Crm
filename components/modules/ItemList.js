@@ -8,7 +8,6 @@ export default function ItemList({ form, setForm }) {
     const addHandler = () => {
         setForm({ ...form, products: [...products, { name: '', qty: '', price: '' }] })
     }
-    console.log(products);
 
     const changeHandler=(e,index)=>{
         const {name, value}= e.target;

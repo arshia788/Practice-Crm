@@ -6,7 +6,10 @@ export default function Layout({ children }) {
         <div className='bg-black h-full box-border p-4'>
 
             <header className='w-10/12 mx-auto flex justify-between items-center text-white'>
-                <h2 className='text-zinc-50 text-xl font-semibold'>Next-Crm</h2>
+                <Link href="/">
+                    <h2 className='text-zinc-50 text-xl font-semibold'>Next-Crm</h2>
+                </Link>
+                
                 <Link href='/add-customer' className=' rounded bg-green-500 px-4 py-1'>Add-Customer</Link>
             </header>
 
